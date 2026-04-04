@@ -7,12 +7,9 @@ class Person:
         self.people[name] = self
 
 
-def create_person_list(people: list) -> list:
-    result = []
-
-    for person in people:
-        person_instance = Person(name=person["name"], age=person["age"])
-        result.append(person_instance)
+def create_person_list(people: list[Person]) -> list[Person]:
+    result = [Person(name=person["name"],
+                     age=person["age"]) for person in people]
 
     for person in people:
         current_person = Person.people[person["name"]]
