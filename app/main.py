@@ -1,5 +1,5 @@
 class Person:
-    people = dict()
+    people: dict[str, "Person"] = {}
 
     def __init__(self, name: str, age: int) -> None:
         self.name = name
